@@ -70,7 +70,8 @@ class House
     private $postCode;
 
     /**
-     * Function get house id
+     * Get id
+	 *
      * @return integer
      */
     public function getId()
@@ -79,7 +80,8 @@ class House
     }
 
     /**
-     * Function get house street
+     * Get street
+	 *
      * @return Street
      */
     public function getStreet()
@@ -88,7 +90,8 @@ class House
     }
 
     /**
-     * Function set street house
+     * Set street
+	 *
      * @param Street $street
      * @return House
      */
@@ -100,7 +103,8 @@ class House
     }
 
     /**
-     * Function get house number
+     * Get houseNumber
+	 *
      * @return string
      */
     public function getHouseNumber()
@@ -109,7 +113,8 @@ class House
     }
 
     /**
-     * Function set number house
+     * Set houseNumber
+	 *
      * @param string $houseNumber
      * @return House
      */
@@ -121,7 +126,8 @@ class House
     }
 
     /**
-     * Function get house post code
+     * Get postCode
+	 *
      * @return string
      */
     public function getPostCode()
@@ -130,7 +136,8 @@ class House
     }
 
     /**
-     * Function set post code house
+     * Set postCode
+	 *
      * @param string $postCode
      * @return House
      */
