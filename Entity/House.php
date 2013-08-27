@@ -29,8 +29,8 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  *
  * @ORM\Table(name="country_houses", indexes={
- *      @ORM\Index(name="street_house_number", columns={"street_id", "house_number"}),
- *      @ORM\Index(name="post_code", columns={"post_code"}),
+ * @ORM\Index(name="street_house_number", columns={"street_id", "house_number"}),
+ * @ORM\Index(name="post_code", columns={"post_code"}),
  * })
  * @ORM\Entity
  */
@@ -71,7 +71,7 @@ class House
 
     /**
      * Get id
-	 *
+     *
      * @return integer
      */
     public function getId()
@@ -81,7 +81,7 @@ class House
 
     /**
      * Get street
-	 *
+     *
      * @return Street
      */
     public function getStreet()
@@ -91,7 +91,7 @@ class House
 
     /**
      * Set street
-	 *
+     *
      * @param Street $street
      * @return House
      */
@@ -104,7 +104,7 @@ class House
 
     /**
      * Get houseNumber
-	 *
+     *
      * @return string
      */
     public function getHouseNumber()
@@ -114,7 +114,7 @@ class House
 
     /**
      * Set houseNumber
-	 *
+     *
      * @param string $houseNumber
      * @return House
      */
@@ -127,7 +127,7 @@ class House
 
     /**
      * Get postCode
-	 *
+     *
      * @return string
      */
     public function getPostCode()
@@ -137,7 +137,7 @@ class House
 
     /**
      * Set postCode
-	 *
+     * 
      * @param string $postCode
      * @return House
      */
