@@ -40,5 +40,38 @@ public function registerBundles()
 }
 ```
 
+### Step 3: Update doctrine schema
+
+``` bash
+$ php app/console doctrine:schema:update --dump-sql
+```
+
+### Step 4: Create form
+
+Create form builder and add address form:
+
+``` php
+	$builder->add(
+		'address',
+		'tadcka_address',
+		array(
+			'_locale' => 'en'
+		)
+	);
+```
+
+### Step 5: Include javascript and css
+
+```twig
+	'@TadckaAddressBundle/Resources/public/css/address.css'
+	'@TadckaAddressBundle/Resources/public/js/address.js'
+```
+
+```js
+$(document).ready(function () {
+    $('div#tadcka_address_form').address_form();
+});
+```
+
 
 
