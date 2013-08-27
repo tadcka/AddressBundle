@@ -51,20 +51,21 @@ $ php app/console doctrine:schema:update --dump-sql
 Create form builder and add address form:
 
 ``` php
-	$builder->add(
-		'address',
-		'tadcka_address',
-		array(
-			'_locale' => 'en'
-		)
-	);
+$builder->add(
+	'address',
+	'tadcka_address',
+	array(
+		'_locale' => 'en'
+	)
+);
 ```
 
 ### Step 5: Include javascript and css
 
 ```twig
-	'@TadckaAddressBundle/Resources/public/css/address.css'
-	'@TadckaAddressBundle/Resources/public/js/address.js'
+@TadckaAddressBundle/Resources/public/css/address.css
+
+@TadckaAddressBundle/Resources/public/js/address.js
 ```
 
 ```js
