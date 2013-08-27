@@ -1,0 +1,11 @@
+form:
+    country_choice:
+        empty_value: Select a country
+    address:
+        country: Country
+        region: Region
+        city: City
+        street: Street
+        house: House
+        flat: Flat
+        post_code: Post code

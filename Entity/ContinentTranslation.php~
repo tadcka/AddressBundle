@@ -1,0 +1,54 @@
+<?php
+/**
+ * Created by JetBrains PhpStorm.
+ * User: Tadcka
+ * Date: 13.8.25
+ * Time: 21.50
+ * To change this template use File | Settings | File Templates.
+ */
+
+namespace Tadcka\AddressBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * @ORM\Table(name="continent_translation", indexes={
+ *      @ORM\Index(name="continent_name_lang", columns={"name", "lang"}),
+ * })
+ * @ORM\Entity
+ */
+class ContinentTranslation
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var Country
+     *
+     * @ORM\ManyToOne(targetEntity="Continent", inversedBy="translations")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="continent_id", referencedColumnName="id", onDelete="CASCADE")
+     * })
+     */
+    private $entity;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="lang", type="string", length=31)
+     */
+    private $lang;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=255, nullable=false)
+     */
+    private $name;
+}

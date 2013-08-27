@@ -1,0 +1,11 @@
+form:
+    country_choice:
+        empty_value: Pasirinkite šalį
+    address:
+        country: Šalis
+        region: Rajonas
+        city: Miestas
+        street: Gatvė
+        house: Namas
+        flat: Butas
+        post_code: Pašto kodas

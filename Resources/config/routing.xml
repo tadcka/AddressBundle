@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<routes xmlns="http://symfony.com/schema/routing"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/routing http://symfony.com/schema/routing/routing-1.0.xsd">
+
+    <route id="tadcka_address_regions" pattern="/address/regions/{id}">
+        <default key="_controller">TadckaAddressBundle:Address:regions</default>
+        <default key="id">0</default>
+        <requirement key="id">\d+</requirement>
+        <requirement key="_method">GET</requirement>
+        <option key="expose">true</option>
+    </route>
+
+    <route id="tadcka_address_cities" pattern="/address/cities/{id}">
+        <default key="_controller">TadckaAddressBundle:Address:cities</default>
+        <default key="id">0</default>
+        <requirement key="id">\d+</requirement>
+        <requirement key="_method">GET</requirement>
+        <option key="expose">true</option>
+    </route>
+
+    <route id="tadcka_address_streets" pattern="/address/streets/{id}">
+        <default key="_controller">TadckaAddressBundle:Address:streets</default>
+        <default key="id">0</default>
+        <requirement key="id">\d+</requirement>
+        <requirement key="_method">GET</requirement>
+        <option key="expose">true</option>
+    </route>
+
+    <route id="tadcka_address_post_code" pattern="/address/post-code/{id}">
+        <default key="_controller">TadckaAddressBundle:Address:postCode</default>
+        <default key="id">0</default>
+        <requirement key="id">\d+</requirement>
+        <requirement key="_method">GET</requirement>
+        <option key="expose">true</option>
+    </route>
+</routes>

@@ -1,0 +1,43 @@
+<?php
+/**
+ * Created by JetBrains PhpStorm.
+ * User: Tadcka
+ * Date: 13.8.25
+ * Time: 21.49
+ * To change this template use File | Settings | File Templates.
+ */
+
+namespace Tadcka\AddressBundle\Entity;
+
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * @ORM\Table(name="continents")
+ * @ORM\Entity
+ */
+class Continent
+{
+    /**
+     * @var integer $id
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var Country[] $countries
+     *
+     * @ORM\OneToMany(targetEntity="Country", mappedBy="continent")
+     */
+    private $countries;
+
+    /**
+     * @var CountryTranslation[] $translations
+     *
+     * @ORM\OneToMany(targetEntity="ContinentTranslation", mappedBy="entity", cascade={"persist", "remove"})
+     */
+    private $translations;
+}

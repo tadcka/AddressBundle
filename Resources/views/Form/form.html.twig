@@ -1,0 +1,49 @@
+{% block tadcka_address_widget %}
+    {% spaceless %}
+        <div class="grid_16 {{ class_form }}" id="{{ id_form }}">
+            <div class="grid_16 alpha omega">
+                {{ form_label(form.country) }}
+                {{ form_widget(form.country) }}
+                {{ form_errors(form.country) }}
+            </div>
+            <div class="clear"><!-- --></div>
+            <div class="grid_16 alpha omega form_address_region" data-url_id="{{ autocomplete_regions }}">
+                {{ form_row(form.region) }}
+                {{ form_label(form.regionName) }}
+                {{ form_widget(form.regionName) }}
+                <div class="address_choice address_button"><span></span></div>
+                {{ form_errors(form.regionName) }}
+            </div>
+            <div class="clear"><!-- --></div>
+            <div class="grid_16 alpha omega form_address_city" data-url_id="{{ autocomplete_cities }}">
+                {{ form_row(form.city) }}
+                {{ form_label(form.cityName) }}
+                {{ form_widget(form.cityName) }}
+                <div class="address_choice address_button"><span></span></div>
+                {{ form_errors(form.cityName) }}
+            </div>
+            <div class="clear"><!-- --></div>
+            <div class="grid_16 alpha omega form_address_street" data-url_id="{{ autocomplete_streets }}">
+                {{ form_row(form.street) }}
+                {{ form_label(form.streetName) }}
+                {{ form_widget(form.streetName) }}
+                <div class="address_choice address_button"><span></span></div>
+                {{ form_errors(form.streetName) }}
+            </div>
+            <div class="clear"><!-- --></div>
+            <div class="grid_16 alpha omega">
+                {{ form_row(form.house) }}
+                {{ form_row(form.houseNumber) }}
+            </div>
+            <div class="clear"><!-- --></div>
+            <div class="grid_16 alpha omega">
+                {{ form_row(form.flat) }}
+            </div>
+            <div class="clear"><!-- --></div>
+            <div class="grid_16 alpha omega">
+                {{ form_row(form.postCode) }}
+            </div>
+            {{ form_rest(form) }}
+        </div>
+    {% endspaceless %}
+{% endblock tadcka_address_widget %}
