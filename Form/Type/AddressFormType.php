@@ -51,7 +51,7 @@ class AddressFormType extends AbstractType
             'country',
             new CountryChoiceFormType($this->doctrine, $options['_locale']),
             array(
-                'attr' => array('class' => 'select_16 address_country'),
+                'attr' => array('class' => 'select_16 address_country select2'),
             )
         );
 
