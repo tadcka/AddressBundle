@@ -25,7 +25,6 @@
 namespace Tadcka\AddressBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Evispa\UserBundle\Entity\Address
@@ -110,7 +109,6 @@ class Address
     /**
      * @var Country
      *
-     * @Assert\NotBlank(groups={"simple"})
      * @ORM\ManyToOne(targetEntity="Country")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="country_id", referencedColumnName="id", nullable=true)
@@ -151,7 +149,6 @@ class Address
     /**
      * @var House
      *
-     * @Assert\NotBlank()
      * @ORM\ManyToOne(targetEntity="House")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="house_id", referencedColumnName="id", nullable=true)

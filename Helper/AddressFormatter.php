@@ -1,5 +1,5 @@
 <?php
-/**
+/*
  * The MIT License (MIT)
  *
  * Copyright (c) 2013 Tadas Gliaubicas <tadcka89@gmail.com>
@@ -41,9 +41,37 @@ class AddressFormatter
      * @param string $type
      * @return string
      */
-    public function formatter(Address $address, $type)
+    public static function formatter(Address $address, $type = self::MEDIUM)
     {
         $text = '';
+
+        $countryName = $address->getCountryName();
+        $text .= !empty($countryName) ? $countryName : '';
+
+        $countryCode = $address->getCountryCode();
+        $text .= !empty($countryCode) ? ($text !== '' ? ' ' . $countryCode : $countryCode) : '';
+
+        $regionName = $address->getRegionName();
+        $text .= !empty($regionName) ? ($text !== '' ? ', ' . $regionName : $regionName) : '';
+
+        $cityName = $address->getCityName();
+        $text .= !empty($cityName) ? ($text !== '' ? ', ' . $cityName : $cityName) : '';
+
+        if ((self::MEDIUM === $type) || (self::LONG === $type)) {
+            $streetName = $address->getStreetName();
+            $text .= !empty($streetName) ? ($text !== '' ? ', ' . $streetName : $streetName) : '';
+
+            $houseNumber = $address->getHouseNumber();
+            $text .= !empty($houseNumber) ? ($text !== '' ? ' ' . $houseNumber : '') : '';
+
+            $flat = $address->getFlat();
+            $text .= !empty($flat) ? ($text !== '' ? ($houseNumber !== '-' . $flat ?  : ' ' . $flat) : '' ) : '';
+        }
+
+        if (self::LONG === $type) {
+            $postCode = $address->getPostCode();
+            $text .= !empty($postCode) ? ($text !== '' ? ', ' . $postCode : '') : '';
+        }
 
         return $text;
     }

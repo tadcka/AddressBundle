@@ -7,12 +7,16 @@
 
     <parameters>
         <parameter key="tadcka_address.form.type.class">Tadcka\AddressBundle\Form\Type\AddressFormType</parameter>
+        <parameter key="tadcka_address.twig.address_extension.class">Tadcka\AddressBundle\Twig\Extension\AddressExtension</parameter>
     </parameters>
 
     <services>
         <service id="tadcka_address.form.type" class="%tadcka_address.form.type.class%">
             <tag name="form.type" alias="tadcka_address" />
             <argument type="service" id="doctrine" />
+        </service>
+        <service id="tadcka_address.twig.address_extension" class="%tadcka_address.twig.address_extension.class%" public="false">
+            <tag name="twig.extension" />
         </service>
     </services>
 
