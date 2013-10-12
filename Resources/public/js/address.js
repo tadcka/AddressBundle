@@ -31,7 +31,6 @@
             button: null
         },
 
-
         _create: function () {
             if (this.options.url_id && this.options.url_parameter && this.options.input_text && this.options.input_object && this.options.button) {
                 this._createAutocomplete();
@@ -168,7 +167,7 @@
                 });
         };
 
-        if ($addressCountry.is(':enabled')) {
+        if ($addressCountry.val()) {
             formAddressRegion($addressCountry.val());
         }
 
@@ -219,7 +218,7 @@
         $addressHouseNumber.focusout(function () {
             if ($(this).val().length > 0 && $addressStreet.val().length) {
                 $.ajax({
-                    url: Routing.generate($addressPostCode.data('url_id'), { streetId: $addressStreet.val() }),
+                    url: Routing.generate($addressPostCode.data('url_id'), { id: $addressStreet.val() }),
                     dataType: "json",
                     data: {
                         house: $(this).val()

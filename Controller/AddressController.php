@@ -115,8 +115,9 @@ class AddressController extends ContainerAware
     {
         $data = array(
             'post_code' => '',
+            'house' => null,
         );
-        if ($request->getMethod() === "GET") {
+        if ($request->getMethod() === "GET" && ($id !== 0)) {
             $houseNumber = $request->get('house', '');
 
             if (trim($houseNumber) !== '') {
