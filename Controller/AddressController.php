@@ -57,14 +57,14 @@ class AddressController extends ContainerAware
     public function regionsAction(Request $request, $id = 0)
     {
         $data = array();
-        if($request->getMethod() === "GET"){
+        if ($request->getMethod() === "GET") {
             $text = $request->get('text', '');
             if ($id !== 0) {
                 $country = $this->getDoctrine()->getRepository('TadckaAddressBundle:Country')->find($id);
 
                 if ($country !== null) {
                     $data = $this->getDoctrine()->getRepository('TadckaAddressBundle:Region')
-                                                        ->getRegionsByCountryToDropDown($country, $text, $this->getLimit());
+                        ->getRegionsByCountryToDropDown($country, $text, $this->getLimit());
                 }
             }
         }
@@ -76,14 +76,14 @@ class AddressController extends ContainerAware
     {
         $data = array();
 
-        if($request->getMethod() === "GET"){
+        if ($request->getMethod() === "GET") {
             $text = $request->get('text', '');
 
             if ($id !== 0) {
                 $region = $this->getDoctrine()->getRepository('TadckaAddressBundle:Region')->find($id);
                 if ($region !== null) {
                     $data = $this->getDoctrine()->getRepository('TadckaAddressBundle:City')
-                                                    ->getCitiesByRegionToDropDown($region, $text, $this->getLimit());
+                        ->getCitiesByRegionToDropDown($region, $text, $this->getLimit());
                 }
             }
         }
@@ -95,7 +95,7 @@ class AddressController extends ContainerAware
     {
         $data = array();
 
-        if($request->getMethod() === "GET"){
+        if ($request->getMethod() === "GET") {
             $text = $request->get('text', '');
             if ($id !== 0) {
                 $city = $this->getDoctrine()->getRepository('TadckaAddressBundle:City')->find($id);
