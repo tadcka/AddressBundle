@@ -24,43 +24,48 @@
 
 namespace Tadcka\AddressBundle\Form\DataTransformer;
 
-use Doctrine\Bundle\DoctrineBundle\Registry;
+use Symfony\Bridge\Doctrine\RegistryInterface;
 use Symfony\Component\Form\DataTransformerInterface;
 use Symfony\Component\Form\Exception\TransformationFailedException;
 
 class EntityHiddenDataTransformer implements DataTransformerInterface
 {
-
     /**
-     * @var Registry
+     * @var RegistryInterface
      */
     protected $doctrine;
 
     /**
      * @var string
      */
-    protected $class;
+    protected $repositoryName;
 
-    public function __construct(Registry $doctrine, $class)
+    /**
+     * Constructor.
+     *
+     * @param RegistryInterface $doctrine
+     * @param string $repositoryName
+     */
+    public function __construct(RegistryInterface $doctrine, $repositoryName)
     {
         $this->doctrine = $doctrine;
-        $this->class = $class;
+        $this->repositoryName = $repositoryName;
     }
 
     /**
      * Transform.
      *
-     * @param $entity
+     * @param mixed $object
      *
-     * @return int
+     * @return int|null
      */
-    public function transform($entity)
+    public function transform($object)
     {
-        if (null === $entity) {
-            return;
+        if (null !== $object) {
+            return $object->getId();
         }
 
-        return $entity->getId();
+        return null;
     }
 
     /**
@@ -68,22 +73,22 @@ class EntityHiddenDataTransformer implements DataTransformerInterface
      *
      * @param int $id
      *
-     * @return \stdClass|null
+     * @return mixed
      *
      * @throws \Symfony\Component\Form\Exception\TransformationFailedException
      */
     public function reverseTransform($id)
     {
-        if (!$id) {
+        if (null === $id) {
             return null;
         }
 
-        $entity = $this->doctrine->getRepository($this->class)->find($id);
+        $object = $this->doctrine->getRepository($this->repositoryName)->find($id);
 
-        if (null === $entity) {
+        if (null === $object) {
             throw new TransformationFailedException();
         }
 
-        return $entity;
+        return $object;
     }
 }
