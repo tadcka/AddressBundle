@@ -113,13 +113,9 @@ class AddressController extends ContainerAware
 
     public function postCodeAction(Request $request, $id = 0)
     {
-        $data = array(
-            'post_code' => '',
-            'house' => null,
-        );
+        $data = array('post_code' => '', 'house' => null);
         if ($request->getMethod() === "GET" && ($id !== 0)) {
             $houseNumber = $request->get('house', '');
-
             if (trim($houseNumber) !== '') {
                 $house = $this->getDoctrine()->getRepository('TadckaAddressBundle:House')
                     ->findOneBy(array('street' => $id, 'houseNumber' => $houseNumber));

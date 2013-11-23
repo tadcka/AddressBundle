@@ -25,6 +25,7 @@
 namespace Tadcka\AddressBundle\EntityRepository;
 
 use Doctrine\ORM\EntityRepository;
+use Doctrine\ORM\NoResultException;
 
 class CountryTranslationRepository extends EntityRepository
 {

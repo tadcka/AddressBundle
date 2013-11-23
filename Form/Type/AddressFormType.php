@@ -26,7 +26,6 @@ namespace Tadcka\AddressBundle\Form\Type;
 
 use Tadcka\AddressBundle\Form\DataTransformer\AddressDataTransformer;
 use Doctrine\Bundle\DoctrineBundle\Registry;
-use Doctrine\ORM\EntityRepository;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\FormInterface;

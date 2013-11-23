@@ -48,9 +48,10 @@ class EntityHiddenDataTransformer implements DataTransformerInterface
     }
 
     /**
-     * Transform
+     * Transform.
      *
-     * @param object $entity
+     * @param $entity
+     *
      * @return int
      */
     public function transform($entity)
@@ -63,10 +64,12 @@ class EntityHiddenDataTransformer implements DataTransformerInterface
     }
 
     /**
-     * Reverse transform
+     * Reverse transform.
      *
      * @param int $id
-     * @return object|null
+     *
+     * @return \stdClass|null
+     *
      * @throws \Symfony\Component\Form\Exception\TransformationFailedException
      */
     public function reverseTransform($id)
