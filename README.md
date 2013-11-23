@@ -1,6 +1,8 @@
 AddressBundle
 =============
 
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/f568a9bf-e77e-486c-be85-8b313464268e/big.png)](https://insight.sensiolabs.com/projects/f568a9bf-e77e-486c-be85-8b313464268e)
+
 Full control the user's address on Symfony2
 
 ## Installation
