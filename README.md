@@ -76,5 +76,7 @@ $(document).ready(function () {
 });
 ```
 
+Authors
+---------
 
-
+The bundle was originally created by Tadas Gliaubicas. See the list of [contributors](https://github.com/tadcka/AddressBundle/contributors).
